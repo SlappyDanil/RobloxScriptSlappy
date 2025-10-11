@@ -1,0 +1,394 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local GUI = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TitleOfGUI = Instance.new("TextLabel")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local ToggleKey = Instance.new("TextLabel")
+local SetWalkspeed = Instance.new("TextLabel")
+local WalkSpeedSlider = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local Handle = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local ToggleInfJump = Instance.new("TextLabel")
+local InfJumpButton = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local dragbox = Instance.new("Frame")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+GUI.Name = "GUI"
+GUI.Parent = ScreenGui
+GUI.AnchorPoint = Vector2.new(0.5, 0.5)
+GUI.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+GUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GUI.BorderSizePixel = 0
+GUI.Position = UDim2.new(0.5, 0, 0.5, 0)
+GUI.Size = UDim2.new(0, 588, 0, 407)
+
+UICorner.CornerRadius = UDim.new(0, 24)
+UICorner.Parent = GUI
+
+TitleOfGUI.Name = "Title Of GUI"
+TitleOfGUI.Parent = GUI
+TitleOfGUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleOfGUI.BackgroundTransparency = 100.000
+TitleOfGUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TitleOfGUI.BorderSizePixel = 0
+TitleOfGUI.Size = UDim2.new(0, 433, 0, 76)
+TitleOfGUI.Font = Enum.Font.DenkOne
+TitleOfGUI.Text = "Slappy's Universal GUI"
+TitleOfGUI.TextColor3 = Color3.fromRGB(180, 180, 180)
+TitleOfGUI.TextSize = 48.000
+
+ScrollingFrame.Parent = GUI
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 100.000
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0, 0, 0.186732188, 0)
+ScrollingFrame.Size = UDim2.new(0, 588, 0, 331)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 3, 0)
+
+ToggleKey.Name = "ToggleKey"
+ToggleKey.Parent = ScrollingFrame
+ToggleKey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleKey.BackgroundTransparency = 100.000
+ToggleKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ToggleKey.BorderSizePixel = 0
+ToggleKey.Position = UDim2.new(0.0300000254, 0, -0.00181648741, 0)
+ToggleKey.Size = UDim2.new(0, 228, 0, 50)
+ToggleKey.Font = Enum.Font.Merriweather
+ToggleKey.Text = "Press RightCtrl To Toggle GUI"
+ToggleKey.TextColor3 = Color3.fromRGB(180, 180, 180)
+ToggleKey.TextSize = 18.000
+
+SetWalkspeed.Name = "SetWalkspeed"
+SetWalkspeed.Parent = ScrollingFrame
+SetWalkspeed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SetWalkspeed.BackgroundTransparency = 100.000
+SetWalkspeed.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SetWalkspeed.BorderSizePixel = 0
+SetWalkspeed.Position = UDim2.new(0.0300000254, 0, 0.0248392802, 0)
+SetWalkspeed.Size = UDim2.new(0, 162, 0, 50)
+SetWalkspeed.Font = Enum.Font.Merriweather
+SetWalkspeed.Text = "Set Player Walkspeed"
+SetWalkspeed.TextColor3 = Color3.fromRGB(180, 180, 180)
+SetWalkspeed.TextSize = 18.000
+
+WalkSpeedSlider.Name = "WalkSpeedSlider"
+WalkSpeedSlider.Parent = ScrollingFrame
+WalkSpeedSlider.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+WalkSpeedSlider.BorderColor3 = Color3.fromRGB(0, 0, 0)
+WalkSpeedSlider.BorderSizePixel = 0
+WalkSpeedSlider.Position = UDim2.new(0.322108895, 0, 0.0354531296, 0)
+WalkSpeedSlider.Size = UDim2.new(0, 368, 0, 32)
+
+UICorner_2.Parent = WalkSpeedSlider
+
+Handle.Name = "Handle"
+Handle.Parent = WalkSpeedSlider
+Handle.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+Handle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Handle.BorderSizePixel = 0
+Handle.Position = UDim2.new(0.0288042817, 0, 0, 0)
+Handle.Size = UDim2.new(0, 32, 0, 32)
+
+UICorner_3.CornerRadius = UDim.new(0, 100)
+UICorner_3.Parent = Handle
+
+ToggleInfJump.Name = "ToggleInfJump"
+ToggleInfJump.Parent = ScrollingFrame
+ToggleInfJump.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleInfJump.BackgroundTransparency = 100.000
+ToggleInfJump.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ToggleInfJump.BorderSizePixel = 0
+ToggleInfJump.Position = UDim2.new(0.0299999993, 0, 0.0599999987, 0)
+ToggleInfJump.Size = UDim2.new(0, 162, 0, 50)
+ToggleInfJump.Font = Enum.Font.Merriweather
+ToggleInfJump.Text = "Toggle Infinite Jump"
+ToggleInfJump.TextColor3 = Color3.fromRGB(180, 180, 180)
+ToggleInfJump.TextSize = 18.000
+
+InfJumpButton.Name = "InfJumpButton"
+InfJumpButton.Parent = ScrollingFrame
+InfJumpButton.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+InfJumpButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InfJumpButton.BorderSizePixel = 0
+InfJumpButton.Position = UDim2.new(0.321999997, 0, 0.0700000003, 0)
+InfJumpButton.Size = UDim2.new(0, 368, 0, 32)
+InfJumpButton.Font = Enum.Font.SourceSans
+InfJumpButton.Text = ""
+InfJumpButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfJumpButton.TextSize = 14.000
+
+UICorner_4.Parent = InfJumpButton
+
+dragbox.Name = "dragbox"
+dragbox.Parent = GUI
+dragbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+dragbox.BackgroundTransparency = 100.000
+dragbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+dragbox.BorderSizePixel = 0
+dragbox.Size = UDim2.new(0, 588, 0, 69)
+
+-- Scripts:
+
+local function FGUJZDG_fake_script() -- ScreenGui.Toggle 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	-- LocalScript (place inside your ScreenGui)
+	local UserInputService = game:GetService("UserInputService")
+	local TweenService = game:GetService("TweenService")
+	
+	local ScreenGui = script.Parent
+	local TOGGLE_KEY = Enum.KeyCode.RightControl -- change if needed
+	local TWEEN_TIME = 0.25 -- seconds for fade
+	
+	-- Properties to tween
+	local TRANSPARENCY_PROPS = {
+		"BackgroundTransparency",
+		"ImageTransparency",
+		"TextTransparency",
+		"TextStrokeTransparency"
+	}
+	
+	-- Store original transparency values
+	local original = {}
+	
+	-- Record originals
+	local function recordOriginals()
+		for _, obj in ScreenGui:GetDescendants() do
+			for _, prop in TRANSPARENCY_PROPS do
+				local ok, val = pcall(function() return obj[prop] end)
+				if ok and val ~= nil then
+					original[obj] = original[obj] or {}
+					original[obj][prop] = val
+				end
+			end
+		end
+	end
+	
+	-- Tween a single object
+	local function tweenObject(obj, target)
+		if original[obj] then
+			for prop, orig in original[obj] do
+				local goal = {}
+				goal[prop] = target and 1 or orig -- fade out to 1, fade in to original
+				local tween = TweenService:Create(obj, TweenInfo.new(TWEEN_TIME, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), goal)
+				tween:Play()
+			end
+		end
+	end
+	
+	-- Fade all descendants
+	local function fadeAll(fadeOut)
+		for _, obj in ipairs(ScreenGui:GetDescendants()) do
+			tweenObject(obj, fadeOut)
+		end
+	end
+	
+	-- Toggle
+	local isEnabled = true
+	local function toggleGUI()
+		if isEnabled then
+			-- Fade out
+			fadeAll(true)
+			wait(TWEEN_TIME)
+			ScreenGui.Enabled = false
+		else
+			-- Enable first
+			ScreenGui.Enabled = true
+			wait(0.01) -- small delay to prevent flicker
+			fadeAll(false)
+		end
+		isEnabled = not isEnabled
+	end
+	
+	-- Setup
+	recordOriginals()
+	
+	-- Listen for key
+	UserInputService.InputBegan:Connect(function(input, gameProcessed)
+		if gameProcessed then return end
+		if input.KeyCode == TOGGLE_KEY then
+			toggleGUI()
+		end
+	end)
+	
+end
+coroutine.wrap(FGUJZDG_fake_script)()
+local function HDJBFL_fake_script() -- Handle.LocalScript 
+	local script = Instance.new('LocalScript', Handle)
+
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	
+	local handle = script.Parent
+	local slider = handle.Parent
+	local mouse = player:GetMouse()
+	
+	local dragging = false
+	local sliderWidth = slider.AbsoluteSize.X
+	local minSpeed = 1      -- minimum WalkSpeed
+	local maxSpeed = 500    -- maximum WalkSpeed
+	
+	-- Create a TextLabel inside the handle if it doesn't exist
+	local label = handle:FindFirstChild("TextLabel")
+	if not label then
+		label = Instance.new("TextLabel")
+		label.Size = UDim2.new(1, 0, 1, 0)
+		label.BackgroundTransparency = 1
+		label.TextColor3 = Color3.new(1,1,1)
+		label.TextScaled = true
+		label.Parent = handle
+	end
+	
+	-- Function to update handle label
+	local function updateLabel(speed)
+		label.Text = math.floor(speed)
+	end
+	updateLabel(humanoid.WalkSpeed)
+	
+	-- Begin dragging
+	handle.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+		end
+	end)
+	
+	-- Stop dragging
+	handle.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = false
+		end
+	end)
+	
+	-- Update handle position and WalkSpeed while dragging
+	mouse.Move:Connect(function()
+		if dragging then
+			local mousePos = mouse.X
+			local sliderPos = slider.AbsolutePosition.X
+			local newX = math.clamp(mousePos - sliderPos, 0, sliderWidth)
+			handle.Position = UDim2.new(0, newX, 0, 0)
+	
+			-- Set WalkSpeed based on handle position
+			local speed = minSpeed + (newX / sliderWidth) * (maxSpeed - minSpeed)
+			humanoid.WalkSpeed = speed
+	
+			-- Update handle label
+			updateLabel(speed)
+		end
+	end)
+	
+end
+coroutine.wrap(HDJBFL_fake_script)()
+local function PCZIU_fake_script() -- InfJumpButton.LocalScript 
+	local script = Instance.new('LocalScript', InfJumpButton)
+
+	local UserInputService = game:GetService("UserInputService")
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	
+	local button = script.Parent
+	local isActive = false
+	local infJump
+	local infJumpDebounce = false
+	
+	-- Function to enable infinite jump
+	local function enableInfJump()
+		if infJump then infJump:Disconnect() end
+		infJumpDebounce = false
+		infJump = UserInputService.JumpRequest:Connect(function()
+			if not infJumpDebounce then
+				infJumpDebounce = true
+				local humanoid = player.Character and player.Character:FindFirstChildWhichIsA("Humanoid")
+				if humanoid then
+					humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				end
+				wait()
+				infJumpDebounce = false
+			end
+		end)
+	end
+	
+	-- Function to disable infinite jump
+	local function disableInfJump()
+		if infJump then infJump:Disconnect() end
+		infJumpDebounce = false
+	end
+	
+	-- Toggle on button click (no text change)
+	button.MouseButton1Click:Connect(function()
+		isActive = not isActive
+		if isActive then
+			enableInfJump()
+		else
+			disableInfJump()
+		end
+	end)
+	
+end
+coroutine.wrap(PCZIU_fake_script)()
+local function UTLZ_fake_script() -- dragbox.LocalScript 
+	local script = Instance.new('LocalScript', dragbox)
+
+	-- LocalScript inside DragBox
+	
+	local UserInputService = game:GetService("UserInputService")
+	local DragBox = script.Parent
+	local GUI = DragBox.Parent
+	
+	local dragging = false
+	local dragStart = Vector2.new()
+	local startPos = UDim2.new()
+	
+	DragBox.Active = true -- ensure it can detect input
+	
+	-- Function to move GUI
+	local function update(input)
+		local delta = input.Position - dragStart
+		GUI.Position = UDim2.new(
+			startPos.X.Scale,
+			startPos.X.Offset + delta.X,
+			startPos.Y.Scale,
+			startPos.Y.Offset + delta.Y
+		)
+	end
+	
+	-- Start dragging
+	DragBox.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = GUI.Position
+	
+			-- Stop dragging
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	-- Move GUI while dragging
+	UserInputService.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			update(input)
+		end
+	end)
+	
+end
+coroutine.wrap(UTLZ_fake_script)()
