@@ -24,6 +24,7 @@ local dragbox = Instance.new("Frame")
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = False
 
 GUI.Name = "GUI"
 GUI.Parent = ScreenGui
