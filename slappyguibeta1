@@ -9,21 +9,21 @@ local UICorner = Instance.new("UICorner")
 local TitleOfGUI = Instance.new("TextLabel")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local ToggleKey = Instance.new("TextLabel")
-local SetWalkspeed = Instance.new("TextLabel")
 local WalkSpeedSlider = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
 local Handle = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
-local ToggleInfJump = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
 local InfJumpButton = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
+local FlyButton = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
 local dragbox = Instance.new("Frame")
 
 --Properties:
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.ResetOnSpawn = false
 
 GUI.Name = "GUI"
 GUI.Parent = ScreenGui
@@ -72,26 +72,13 @@ ToggleKey.Text = "Press RightCtrl To Toggle GUI"
 ToggleKey.TextColor3 = Color3.fromRGB(180, 180, 180)
 ToggleKey.TextSize = 18.000
 
-SetWalkspeed.Name = "SetWalkspeed"
-SetWalkspeed.Parent = ScrollingFrame
-SetWalkspeed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SetWalkspeed.BackgroundTransparency = 100.000
-SetWalkspeed.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SetWalkspeed.BorderSizePixel = 0
-SetWalkspeed.Position = UDim2.new(0.0300000254, 0, 0.0248392802, 0)
-SetWalkspeed.Size = UDim2.new(0, 162, 0, 50)
-SetWalkspeed.Font = Enum.Font.Merriweather
-SetWalkspeed.Text = "Set Player Walkspeed"
-SetWalkspeed.TextColor3 = Color3.fromRGB(180, 180, 180)
-SetWalkspeed.TextSize = 18.000
-
 WalkSpeedSlider.Name = "WalkSpeedSlider"
 WalkSpeedSlider.Parent = ScrollingFrame
 WalkSpeedSlider.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
 WalkSpeedSlider.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WalkSpeedSlider.BorderSizePixel = 0
-WalkSpeedSlider.Position = UDim2.new(0.322108895, 0, 0.0354531296, 0)
-WalkSpeedSlider.Size = UDim2.new(0, 368, 0, 32)
+WalkSpeedSlider.Position = UDim2.new(0.0300000254, 0, 0.0570250899, 0)
+WalkSpeedSlider.Size = UDim2.new(0, 539, 0, 52)
 
 UICorner_2.Parent = WalkSpeedSlider
 
@@ -100,38 +87,51 @@ Handle.Parent = WalkSpeedSlider
 Handle.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
 Handle.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Handle.BorderSizePixel = 0
-Handle.Position = UDim2.new(0.0288042817, 0, 0, 0)
+Handle.Position = UDim2.new(0.010251415, 0, 0.192307696, 0)
 Handle.Size = UDim2.new(0, 32, 0, 32)
 
 UICorner_3.CornerRadius = UDim.new(0, 100)
 UICorner_3.Parent = Handle
 
-ToggleInfJump.Name = "ToggleInfJump"
-ToggleInfJump.Parent = ScrollingFrame
-ToggleInfJump.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ToggleInfJump.BackgroundTransparency = 100.000
-ToggleInfJump.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ToggleInfJump.BorderSizePixel = 0
-ToggleInfJump.Position = UDim2.new(0.0299999993, 0, 0.0599999987, 0)
-ToggleInfJump.Size = UDim2.new(0, 162, 0, 50)
-ToggleInfJump.Font = Enum.Font.Merriweather
-ToggleInfJump.Text = "Toggle Infinite Jump"
-ToggleInfJump.TextColor3 = Color3.fromRGB(180, 180, 180)
-ToggleInfJump.TextSize = 18.000
+TextLabel.Parent = WalkSpeedSlider
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 100.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0, 0, 0.0192307699, 0)
+TextLabel.Size = UDim2.new(0, 538, 0, 50)
+TextLabel.Font = Enum.Font.DenkOne
+TextLabel.Text = "Slider Walkspeed"
+TextLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
+TextLabel.TextSize = 28.000
 
 InfJumpButton.Name = "InfJumpButton"
 InfJumpButton.Parent = ScrollingFrame
 InfJumpButton.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
 InfJumpButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 InfJumpButton.BorderSizePixel = 0
-InfJumpButton.Position = UDim2.new(0.321999997, 0, 0.0700000003, 0)
-InfJumpButton.Size = UDim2.new(0, 368, 0, 32)
-InfJumpButton.Font = Enum.Font.SourceSans
-InfJumpButton.Text = ""
-InfJumpButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-InfJumpButton.TextSize = 14.000
+InfJumpButton.Position = UDim2.new(0.0282995515, 0, 0.110416286, 0)
+InfJumpButton.Size = UDim2.new(0, 539, 0, 52)
+InfJumpButton.Font = Enum.Font.DenkOne
+InfJumpButton.Text = "Toggle Infinite Jump"
+InfJumpButton.TextColor3 = Color3.fromRGB(180, 180, 180)
+InfJumpButton.TextSize = 28.000
 
 UICorner_4.Parent = InfJumpButton
+
+FlyButton.Name = "FlyButton"
+FlyButton.Parent = ScrollingFrame
+FlyButton.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+FlyButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FlyButton.BorderSizePixel = 0
+FlyButton.Position = UDim2.new(0.0280000009, 0, 0.163000003, 0)
+FlyButton.Size = UDim2.new(0, 539, 0, 52)
+FlyButton.Font = Enum.Font.DenkOne
+FlyButton.Text = "Toggle Fly"
+FlyButton.TextColor3 = Color3.fromRGB(180, 180, 180)
+FlyButton.TextSize = 28.000
+
+UICorner_5.Parent = FlyButton
 
 dragbox.Name = "dragbox"
 dragbox.Parent = GUI
@@ -143,7 +143,7 @@ dragbox.Size = UDim2.new(0, 588, 0, 69)
 
 -- Scripts:
 
-local function FGUJZDG_fake_script() -- ScreenGui.Toggle 
+local function OYVAE_fake_script() -- ScreenGui.Toggle 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	-- LocalScript (place inside your ScreenGui)
@@ -226,8 +226,8 @@ local function FGUJZDG_fake_script() -- ScreenGui.Toggle
 	end)
 	
 end
-coroutine.wrap(FGUJZDG_fake_script)()
-local function HDJBFL_fake_script() -- Handle.LocalScript 
+coroutine.wrap(OYVAE_fake_script)()
+local function DGDFL_fake_script() -- Handle.LocalScript 
 	local script = Instance.new('LocalScript', Handle)
 
 	local Players = game:GetService("Players")
@@ -293,8 +293,8 @@ local function HDJBFL_fake_script() -- Handle.LocalScript
 	end)
 	
 end
-coroutine.wrap(HDJBFL_fake_script)()
-local function PCZIU_fake_script() -- InfJumpButton.LocalScript 
+coroutine.wrap(DGDFL_fake_script)()
+local function XEPIG_fake_script() -- InfJumpButton.LocalScript 
 	local script = Instance.new('LocalScript', InfJumpButton)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -321,15 +321,17 @@ local function PCZIU_fake_script() -- InfJumpButton.LocalScript
 				infJumpDebounce = false
 			end
 		end)
+		button.Text = "INFINITE JUMP: ON"
 	end
 	
 	-- Function to disable infinite jump
 	local function disableInfJump()
 		if infJump then infJump:Disconnect() end
 		infJumpDebounce = false
+		button.Text = "INFINITE JUMP: OFF"
 	end
 	
-	-- Toggle on button click (no text change)
+	-- Toggle on button click
 	button.MouseButton1Click:Connect(function()
 		isActive = not isActive
 		if isActive then
@@ -339,9 +341,145 @@ local function PCZIU_fake_script() -- InfJumpButton.LocalScript
 		end
 	end)
 	
+	-- Set initial button text
+	button.Text = "INFINITE JUMP: OFF"
+	
 end
-coroutine.wrap(PCZIU_fake_script)()
-local function UTLZ_fake_script() -- dragbox.LocalScript 
+coroutine.wrap(XEPIG_fake_script)()
+local function DZVQZF_fake_script() -- FlyButton.LocalScript 
+	local script = Instance.new('LocalScript', FlyButton)
+
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+	
+	local player = Players.LocalPlayer
+	local button = script.Parent
+	
+	local FLYING = false
+	local QEfly = true
+	local flySpeed = 1
+	local flyConnectionDown
+	local flyConnectionUp
+	local flyToggleConnection
+	
+	-- Get the character's root
+	local function getRoot(char)
+		return char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("Torso") or char:FindFirstChild("UpperTorso")
+	end
+	
+	-- Start flying
+	local function startFly()
+		local char = player.Character or player.CharacterAdded:Wait()
+		local humanoid = char:FindFirstChildOfClass("Humanoid") or char:WaitForChild("Humanoid")
+		local root = getRoot(char)
+	
+		if flyConnectionDown then flyConnectionDown:Disconnect() end
+		if flyConnectionUp then flyConnectionUp:Disconnect() end
+	
+		local CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+		local lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+		local SPEED = 0
+	
+		local BG = Instance.new("BodyGyro")
+		local BV = Instance.new("BodyVelocity")
+		BG.P = 9e4
+		BG.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
+		BG.CFrame = root.CFrame
+		BG.Parent = root
+		BV.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+		BV.Velocity = Vector3.new(0,0,0)
+		BV.Parent = root
+	
+		FLYING = true
+		humanoid.PlatformStand = true
+	
+		flyConnectionDown = UserInputService.InputBegan:Connect(function(input)
+			local camera = workspace.CurrentCamera
+			if input.KeyCode == Enum.KeyCode.W then
+				CONTROL.F = flySpeed
+			elseif input.KeyCode == Enum.KeyCode.S then
+				CONTROL.B = -flySpeed
+			elseif input.KeyCode == Enum.KeyCode.A then
+				CONTROL.L = -flySpeed
+			elseif input.KeyCode == Enum.KeyCode.D then
+				CONTROL.R = flySpeed
+			elseif input.KeyCode == Enum.KeyCode.E and QEfly then
+				CONTROL.Q = flySpeed*2
+			elseif input.KeyCode == Enum.KeyCode.Q and QEfly then
+				CONTROL.E = -flySpeed*2
+			end
+		end)
+	
+		flyConnectionUp = UserInputService.InputEnded:Connect(function(input)
+			if input.KeyCode == Enum.KeyCode.W then
+				CONTROL.F = 0
+			elseif input.KeyCode == Enum.KeyCode.S then
+				CONTROL.B = 0
+			elseif input.KeyCode == Enum.KeyCode.A then
+				CONTROL.L = 0
+			elseif input.KeyCode == Enum.KeyCode.D then
+				CONTROL.R = 0
+			elseif input.KeyCode == Enum.KeyCode.E then
+				CONTROL.Q = 0
+			elseif input.KeyCode == Enum.KeyCode.Q then
+				CONTROL.E = 0
+			end
+		end)
+	
+		-- Update loop
+		flyToggleConnection = RunService.RenderStepped:Connect(function()
+			if not FLYING then return end
+			local camera = workspace.CurrentCamera
+			if CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 or CONTROL.Q + CONTROL.E ~= 0 then
+				SPEED = 50
+			else
+				SPEED = 0
+			end
+	
+			BV.Velocity = ((camera.CFrame.LookVector * (CONTROL.F + CONTROL.B)) +
+				((camera.CFrame * CFrame.new(CONTROL.L + CONTROL.R, (CONTROL.F + CONTROL.B + CONTROL.Q + CONTROL.E) * 0.2, 0).p) - camera.CFrame.p)) * SPEED
+			BG.CFrame = camera.CFrame
+		end)
+	end
+	
+	-- Stop flying
+	local function stopFly()
+		FLYING = false
+		if flyConnectionDown then flyConnectionDown:Disconnect() end
+		if flyConnectionUp then flyConnectionUp:Disconnect() end
+		if flyToggleConnection then flyToggleConnection:Disconnect() end
+	
+		local char = player.Character
+		if char then
+			local humanoid = char:FindFirstChildOfClass("Humanoid")
+			if humanoid then humanoid.PlatformStand = false end
+			local root = getRoot(char)
+			if root then
+				for _, child in ipairs(root:GetChildren()) do
+					if child:IsA("BodyVelocity") or child:IsA("BodyGyro") then
+						child:Destroy()
+					end
+				end
+			end
+		end
+	end
+	
+	-- Toggle button
+	button.Text = "FLY: OFF"
+	button.MouseButton1Click:Connect(function()
+		if FLYING then
+			stopFly()
+			button.Text = "FLY: OFF"
+		else
+			startFly()
+			button.Text = "FLY: ON"
+		end
+	end)
+	
+end
+coroutine.wrap(DZVQZF_fake_script)()
+local function AERZHFA_fake_script() -- dragbox.LocalScript 
 	local script = Instance.new('LocalScript', dragbox)
 
 	-- LocalScript inside DragBox
@@ -391,4 +529,4 @@ local function UTLZ_fake_script() -- dragbox.LocalScript
 	end)
 	
 end
-coroutine.wrap(UTLZ_fake_script)()
+coroutine.wrap(AERZHFA_fake_script)()
